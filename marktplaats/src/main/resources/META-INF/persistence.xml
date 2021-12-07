@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="MySQL-hrm" transaction-type="JTA">
+        <jta-data-source>jdbc/MySQL</jta-data-source>
+        <properties>
+            <!-- connection properties (URL user password) now in server.xml,
+                 zie server-fragment.xml en kopieer dit naar jouw server.xml op liberty,
+                 die staat in (...\)wlp\usr\servers\defaultServer\ -->
+
+            <!-- verplichte properties: -->
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="create"/> <!--werkt voor alle persistence providers-->
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
