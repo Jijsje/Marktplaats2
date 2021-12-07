@@ -41,6 +41,7 @@ public class GebruikerDao {
         updatedGebruiker.setId(id);
         return em.merge(updatedGebruiker);
     }
+
     public Gebruiker authenticate(String login, String password) {
         TypedQuery<Gebruiker> query = em.createNamedQuery(Gebruiker.FIND_BY_LOGIN_PASSWORD, Gebruiker.class);
         query.setParameter("login", login);

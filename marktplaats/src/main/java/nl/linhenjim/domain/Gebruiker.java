@@ -1,6 +1,5 @@
 package nl.linhenjim.domain;
 
-import nl.linhenjim.domain.Bezorgwijze;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Builder

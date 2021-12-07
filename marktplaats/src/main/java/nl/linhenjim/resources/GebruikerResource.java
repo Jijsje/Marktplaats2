@@ -1,10 +1,12 @@
 package nl.linhenjim.resources;
 
-import nl.linhenjim.domain.Gebruiker;
 import nl.linhenjim.dao.GebruikerDao;
+import nl.linhenjim.domain.Gebruiker;
+import nl.linhenjim.util.Responses;
+
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import nl.linhenjim.util.Responses;
+
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 public class GebruikerResource {
@@ -16,7 +18,6 @@ public class GebruikerResource {
     @GET
     @Produces(APPLICATION_JSON)
     public Gebruiker get() {
-//        return gebruikerDao.get(this.id);
         return gebruikerDao.get(this.id).orElseThrow(() -> Responses.badRequest(this.id));
     }
 

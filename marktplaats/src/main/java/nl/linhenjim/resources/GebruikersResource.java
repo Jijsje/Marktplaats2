@@ -20,7 +20,7 @@ public class GebruikersResource {
     @GET
     @Produces(APPLICATION_JSON)
     public List<Gebruiker> getAll(
-                                @QueryParam("q") String q) {
+            @QueryParam("q") String q) {
         return gebruikerDao.getAll(q);
     }
 

@@ -9,7 +9,9 @@ public class Responses {
     }
 
     public static Runnable throwBadRequest(Long id) {
-        return () -> {throw badRequest(id);};
+        return () -> {
+            throw badRequest(id);
+        };
     }
 
     public static BadRequestException badRequest(Long id) {
