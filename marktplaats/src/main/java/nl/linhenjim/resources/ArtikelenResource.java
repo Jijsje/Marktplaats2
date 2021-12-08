@@ -14,18 +14,20 @@ public class ArtikelenResource {
     @Inject
     ArtikelDao dao;
 
+    @Inject
+    private ArtikelResource artikelResource;
+
+    // Bij een lege param worden alle artikelen opgehaald, anders alleen de artikelen vd actieve gebruiker
     @GET
     @Produces(APPLICATION_JSON)
-    public List getArtikelen(@QueryParam("userId") int id) { // optionele parameter
+    public List getArtikelen(@QueryParam("userId") Long id) { // optionele parameter
         System.out.println("ARTIKELEN HALEN IS GELUKT");
-        // als id leeg is haalt ie alle producten op, anders alleen de eigen aangeboden producten
-        return dao.getArtikelen();
+        return dao.getArtikelen(id);
     }
 
     @Path("{artikelId}")
     public ArtikelResource getArtikel(@PathParam("artikelId") int id) {
-        // geeft 1 artikel obv ID
-        id = 4;
-        return new ArtikelResource();
+        this.artikelResource.setId(id);
+        return this.artikelResource;
     }
 }
