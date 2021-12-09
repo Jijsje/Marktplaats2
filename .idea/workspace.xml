@@ -10,18 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a82c0acf-378d-4368-9216-4a5d738be564" name="Changes" comment="update Artikelen">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/marktplaats_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/marktplaats_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/marktplaats_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/marktplaats_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +63,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
@@ -176,7 +172,8 @@
       <option name="presentableId" value="Default" />
       <updated>1638872133353</updated>
       <workItem from="1638872136744" duration="2621000" />
-      <workItem from="1638874956059" duration="23284000" />
+      <workItem from="1638874956059" duration="36616000" />
+      <workItem from="1639039336807" duration="2837000" />
     </task>
     <task id="LOCAL-00001" summary="Eerste commit">
       <created>1638872296241</created>

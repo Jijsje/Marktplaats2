@@ -1,6 +1,7 @@
 package nl.linhenjim.resources;
 
 import nl.linhenjim.dao.ArtikelDao;
+import nl.linhenjim.domain.Artikel;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -25,8 +26,15 @@ public class ArtikelenResource {
         return dao.getArtikelen(id);
     }
 
-    @Path("{artikelId}")
-    public ArtikelResource getArtikel(@PathParam("artikelId") int id) {
+    @POST
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    public Artikel addArtikel(Artikel artikel) {
+        return dao.addArtikel(artikel);
+    }
+
+    @Path("{id}")
+    public ArtikelResource getArtikel(@PathParam("id") int id) {
         this.artikelResource.setId(id);
         return this.artikelResource;
     }
