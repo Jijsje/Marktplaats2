@@ -8,7 +8,7 @@ import java.util.List;
 @Stateless
 public class ArtikelDao {
 
-    List artikelen = List.of;
+//    List artikelen = List.of;
 
     public Artikel getArtikel(int id) {
         return new Artikel(id);
