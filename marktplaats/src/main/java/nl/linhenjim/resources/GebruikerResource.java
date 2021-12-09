@@ -4,11 +4,13 @@ import nl.linhenjim.dao.GebruikerDao;
 import nl.linhenjim.domain.Gebruiker;
 import nl.linhenjim.util.Responses;
 
+import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
+@Dependent
 public class GebruikerResource {
     private long id;
 

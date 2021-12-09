@@ -28,6 +28,9 @@ public class Gebruiker {
     @Column(unique = true)
     private String emailadres;
 
+//    @Column(unique = true)
+    private String username;
+
     private String wachtwoord;
     private String adres;
 

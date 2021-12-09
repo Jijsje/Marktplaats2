@@ -2,9 +2,13 @@ package nl.linhenjim.resources;
 
 import nl.linhenjim.dao.ArtikelDao;
 import nl.linhenjim.domain.Artikel;
+
 import nl.linhenjim.domain.Gebruiker;
 
 import javax.inject.Inject;
+
+import nl.linhenjim.util.Responses;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 
@@ -34,4 +38,5 @@ public class ArtikelResource {
     public void setId(int id) {
         this.id = id;
     }
+
 }
