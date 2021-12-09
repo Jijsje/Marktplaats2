@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="marktplaats:war exploded">
-    <output-path>$PROJECT_DIR$/marktplaats/target/openliberty</output-path>
+    <output-path>$PROJECT_DIR$/marktplaats/target/marktplaats</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -16,10 +16,15 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
+          <element id="library" level="project" name="Maven: org.eclipse.microprofile.openapi:microprofile-openapi-api:2.0" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.7.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/marktplaats/target/openliberty/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/marktplaats/target/marktplaats/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="marktplaats/web/Web" />
     </root>
