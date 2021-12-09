@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="openliberty.war">
+    <root id="archive" name="marktplaats.war">
       <element id="artifact" artifact-name="marktplaats:war exploded" />
     </root>
   </artifact>

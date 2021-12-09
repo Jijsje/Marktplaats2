@@ -1,9 +1,25 @@
 package nl.linhenjim.domain;
 
-public class Artikel {
-    int id;
+import lombok.NoArgsConstructor;
 
-    public Artikel(int id) {
-        this.id = id;
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
+public class Artikel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column
+    private String titel;
+
+    @ManyToOne
+    private Gebruiker verkoper;
+
+    public Artikel(Gebruiker verkoper) {
+        id = 0;
+        this.verkoper = verkoper;
     }
 }

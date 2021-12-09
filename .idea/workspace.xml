@@ -10,7 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a82c0acf-378d-4368-9216-4a5d738be564" name="Changes" comment="update Artikelen">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +63,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
@@ -70,6 +77,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ijsbi00\IdeaProjects\Marktplaats2\marktplaats" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="WebSphere/Liberty 21.0.0.11" type="WebSphereRunConfigurationType" factoryName="Local" APPLICATION_SERVER_NAME="WebSphere/Liberty 21.0.0.11" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -160,7 +172,8 @@
       <option name="presentableId" value="Default" />
       <updated>1638872133353</updated>
       <workItem from="1638872136744" duration="2621000" />
-      <workItem from="1638874956059" duration="16526000" />
+      <workItem from="1638874956059" duration="36616000" />
+      <workItem from="1639039336807" duration="2837000" />
     </task>
     <task id="LOCAL-00001" summary="Eerste commit">
       <created>1638872296241</created>
