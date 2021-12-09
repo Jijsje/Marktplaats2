@@ -33,7 +33,7 @@ public class GebruikersResource {
     @POST
     @Produces(APPLICATION_JSON)
     @Consumes(APPLICATION_JSON)
-    public Gebruiker add(Gebruiker newContact) {
-        return gebruikerDao.add(newContact);
+    public Gebruiker add(Gebruiker gebruiker) {
+        return gebruikerDao.add(gebruiker);
     }
 }
