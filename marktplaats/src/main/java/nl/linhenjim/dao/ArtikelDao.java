@@ -1,7 +1,6 @@
 package nl.linhenjim.dao;
 
 import nl.linhenjim.domain.Artikel;
-import nl.linhenjim.domain.Gebruiker;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -19,13 +18,13 @@ public class ArtikelDao {
     private EntityManager em;
 
     public Optional<Artikel> getArtikel(int id) {
-        return Optional.ofNullable(em.find(Artikel.class, id));
+        return Optional.ofNullable(em.find(Artikel.class, id)); // met optionals
     }
 
-    public List getArtikelen(Long id){ // id van user of product?
-        return id == null ?
-                em.createQuery("SELECT a FROM Artikel a").getResultList() :
-                em.createQuery("SELECT a, v FROM Artikel a JOIN a.verkoper v").getResultList();
+    public List<Artikel> getArtikelen(Long userId) {
+        return userId == null ?
+                em.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList() :
+                em.createQuery("SELECT a, v FROM Artikel a JOIN a.verkoper v", Artikel.class).getResultList();
     }
 
     @TransactionAttribute(REQUIRED)

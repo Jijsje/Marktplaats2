@@ -18,12 +18,10 @@ public class ArtikelenResource {
     @Inject
     private ArtikelResource artikelResource;
 
-    // Bij een lege param worden alle artikelen opgehaald, anders alleen de artikelen vd actieve gebruiker
     @GET
     @Produces(APPLICATION_JSON)
-    public List getArtikelen(@QueryParam("userId") Long id) { // optionele parameter
-        System.out.println("ARTIKELEN HALEN IS GELUKT");
-        return dao.getArtikelen(id);
+    public List<Artikel> getArtikelen(@QueryParam("userId") Long userId) { // optionele parameter
+        return dao.getArtikelen(userId);
     }
 
     @POST
@@ -33,8 +31,8 @@ public class ArtikelenResource {
         return dao.addArtikel(artikel);
     }
 
-    @Path("{id}")
-    public ArtikelResource getArtikel(@PathParam("id") int id) {
+    @Path("{artikelId}")
+    public ArtikelResource getArtikel(@PathParam("artikelId") int id) {
         this.artikelResource.setId(id);
         return this.artikelResource;
     }
