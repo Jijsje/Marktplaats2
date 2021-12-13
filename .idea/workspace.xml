@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a82c0acf-378d-4368-9216-4a5d738be564" name="Changes" comment="update Artikelen">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/dao/ArtikelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/domain/Artikel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/java/nl/linhenjim/resources/ArtikelenResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/marktplaats/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a82c0acf-378d-4368-9216-4a5d738be564" name="Changes" comment="update Artikelen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="cdi.beans_1_1" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -46,6 +39,22 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -68,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javawebapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -78,15 +87,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ijsbi00\IdeaProjects\Marktplaats2\marktplaats" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="WebSphere/Liberty 21.0.0.11" type="WebSphereRunConfigurationType" factoryName="Local" APPLICATION_SERVER_NAME="WebSphere/Liberty 21.0.0.11" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="PORT" value="9080" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:9080/marktplaats/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="marktplaats:war exploded">
@@ -172,8 +175,9 @@
       <option name="presentableId" value="Default" />
       <updated>1638872133353</updated>
       <workItem from="1638872136744" duration="2621000" />
-      <workItem from="1638874956059" duration="36616000" />
-      <workItem from="1639039336807" duration="2837000" />
+      <workItem from="1638874956059" duration="16526000" />
+      <workItem from="1638959679689" duration="10439000" />
+      <workItem from="1639037063248" duration="4916000" />
     </task>
     <task id="LOCAL-00001" summary="Eerste commit">
       <created>1638872296241</created>

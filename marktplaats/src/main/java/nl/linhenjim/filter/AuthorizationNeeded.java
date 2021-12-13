@@ -31,11 +31,11 @@ public class AuthorizationNeeded implements ContainerRequestFilter {
 
         // Get the HTTP Authorization header from the request
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
-//        logger.info("#### authorizationHeader : " + authorizationHeader);
+        logger.info("#### authorizationHeader : " + authorizationHeader);
 
         // Check if the HTTP Authorization header is present and formatted correctly
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-//            logger.severe("#### invalid authorizationHeader : " + authorizationHeader);
+            logger.severe("#### invalid authorizationHeader : " + authorizationHeader);
             throw new NotAuthorizedException("Authorization header must be provided");
         }
 
@@ -46,9 +46,9 @@ public class AuthorizationNeeded implements ContainerRequestFilter {
             // Validate the token
             Key key = keyGenerator.generateKey();
             Jwts.parser().setSigningKey(key).parseClaimsJws(token);
-//            logger.info("#### valid token : " + token);
+            logger.info("#### valid token : " + token);
         } catch (Exception e) {
-//            logger.severe("#### invalid token : " + token);
+            logger.severe("#### invalid token : " + token);
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
     }

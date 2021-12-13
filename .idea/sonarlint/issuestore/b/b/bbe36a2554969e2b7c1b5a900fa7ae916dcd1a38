@@ -1,0 +1,12 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(åÖÈ†øÿÿÿÿ8µşô×Ù/
+U
+java:S1128"8Remove this unused import 'nl.linhenjim.domain.Artikel'.(Ô˜îÛ8Ëşô×Ù/
+U
+java:S1128"8Remove this unused import 'nl.linhenjim.util.Responses'.(ëˆ½‘8Ïşô×Ù/
+H
+java:S1128",Remove this unused import 'javax.ws.rs.GET'.(Şãw8Óşô×Ù/
+S
+java:S1128"1Remove this unused import 'javax.ws.rs.Produces'.(“Ö·°ùÿÿÿÿ8Õşô×Ù/
+j
+java:S1128	"HRemove this unused import 'javax.ws.rs.core.MediaType.APPLICATION_JSON'.(Òá“šÿÿÿÿÿ8Öşô×Ù/
