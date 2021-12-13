@@ -1,11 +1,14 @@
 package nl.linhenjim.domain;
 
+
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
+@Data
 @NoArgsConstructor
+@Entity
 public class Artikel {
 
     @Id
@@ -17,9 +20,4 @@ public class Artikel {
 
     @ManyToOne
     private Gebruiker verkoper;
-
-    public Artikel(Gebruiker verkoper) {
-        id = 0;
-        this.verkoper = verkoper;
-    }
 }
