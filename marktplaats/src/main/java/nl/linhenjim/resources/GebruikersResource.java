@@ -48,7 +48,6 @@ public class GebruikersResource {
     private Logger log;
 
 
-    @Authorized
     @GET
     @Produces(APPLICATION_JSON)
     public List<Gebruiker> getAll(
@@ -78,14 +77,14 @@ public class GebruikersResource {
             String login = u.getUsername();
             String password = u.getWachtwoord();
 
-            gebruikerDao.authenticate(login, password);
+            Gebruiker gevondenGebruiker = gebruikerDao.authenticate(login, password);
             String token = issueToken(login);
-            u.setToken(token);
-            u.setWachtwoord("");
+            gevondenGebruiker.setToken(token);
+//            gevondenGebruiker.setWachtwoord("");
             return Response.ok()
                     .type(MediaType.APPLICATION_JSON_TYPE)
                     .header(AUTHORIZATION, "Bearer " + token)
-                    .entity(u)
+                    .entity(gevondenGebruiker)
                     .build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
