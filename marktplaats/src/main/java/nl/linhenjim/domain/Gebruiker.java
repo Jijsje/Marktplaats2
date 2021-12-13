@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import nl.linhenjim.util.PasswordUtils;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @NamedQueries({
         @NamedQuery(name = "Gebruiker.findAll", query = "SELECT g FROM Gebruiker g ORDER BY g.emailadres DESC"),
-        @NamedQuery(name = Gebruiker.FIND_BY_LOGIN_PASSWORD, query = "SELECT g FROM Gebruiker g WHERE g.emailadres = :login AND g.wachtwoord = :wachtwoord")
+        @NamedQuery(name = Gebruiker.FIND_BY_LOGIN_PASSWORD, query = "SELECT g FROM Gebruiker g WHERE g.username = :username AND g.wachtwoord = :wachtwoord")
 })
 public class Gebruiker {
     public static final String FIND_BY_LOGIN_PASSWORD = "Gebruiker.findByLoginAndPassword";
@@ -28,20 +29,23 @@ public class Gebruiker {
     @Column(unique = true)
     private String emailadres;
 
-//    @Column(unique = true)
+    @Column(unique = true)
     private String username;
-
+    @Column(length = 256, nullable = false)
     private String wachtwoord;
+
+    private String token;
+
     private String adres;
 
     private Bezorgwijze bezorgwijze;
 
     private boolean reglementGeaccepteerd;
 
-//    @OneToMany(mappedBy = "gebruiker", targetEntity = Artikel.class, cascade = CascadeType.ALL, orphanRemoval=true)
-//    private List<Artikel> artikelen = new ArrayList<>();
+    @PrePersist // to indicate that the method should be called before the entity is persisted into the database
+    private void setUUID() {
+//        id = randomUUID().toString()/*.replace("-", "")*/;
+        wachtwoord = PasswordUtils.digestPassword(wachtwoord);
+    }
 
-//    void addArtikel(Artikel a) {
-//        this.artikelen.add(a);
-//    }
 }

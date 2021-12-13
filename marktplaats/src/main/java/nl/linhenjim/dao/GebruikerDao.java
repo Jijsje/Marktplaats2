@@ -42,13 +42,14 @@ public class GebruikerDao {
         return em.merge(updatedGebruiker);
     }
 
-    public Gebruiker authenticate(String login, String password) {
+    public Gebruiker authenticate(String username, String wachtwoord) {
+        System.out.println("Authenticating");
         TypedQuery<Gebruiker> query = em.createNamedQuery(Gebruiker.FIND_BY_LOGIN_PASSWORD, Gebruiker.class);
-        query.setParameter("login", login);
-        query.setParameter("password", PasswordUtils.digestPassword(password));
-        Gebruiker Gebruiker = query.getSingleResult();
 
-        if (Gebruiker == null) throw new SecurityException("Invalid Gebruiker/password");
-        return Gebruiker;
+        query.setParameter("username", username);
+        query.setParameter("wachtwoord", PasswordUtils.digestPassword(wachtwoord));
+        Gebruiker gebruiker = query.getSingleResult();
+        if (gebruiker == null) throw new SecurityException("Invalid Gebruiker/password");
+        return gebruiker;
     }
 }
