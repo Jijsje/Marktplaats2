@@ -1,5 +1,6 @@
 package nl.linhenjim.dao;
 
+import com.fasterxml.jackson.databind.util.ISO8601Utils;
 import nl.linhenjim.domain.Artikel;
 
 import javax.ejb.Stateless;
@@ -17,15 +18,28 @@ public class ArtikelDao {
     @PersistenceContext
     private EntityManager em;
 
+    // zoek op artikel ID
     public Optional<Artikel> getArtikel(int id) {
-        return Optional.ofNullable(em.find(Artikel.class, id)); // met optionals
+        return Optional.ofNullable(em.find(Artikel.class, id));
     }
 
-    public List<Artikel> getArtikelen(Long userId) {
-        return userId == null ?
+    // haal alle artikelen OF obv zoekterm
+    public List<Artikel> getArtikelen(String query) {
+        return query == null ?
                 em.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList() :
-                em.createQuery("SELECT a, v FROM Artikel a JOIN a.verkoper v", Artikel.class).getResultList();
+                em.createQuery("SELECT a FROM Artikel a WHERE a.titel LIKE :query", Artikel.class)
+                        .setParameter("query", '%'+ query+ '%')
+                        .getResultList();
     }
+
+//    // alle artikelen van 1 gebruiker --- NIET WEGGOOIEN
+//    public List<Artikel> getEigenArtikelen(Long userId) {
+//        return userId == null ?
+//                em.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList() :
+//                em.createQuery("SELECT a FROM Artikel a WHERE a.verkoper.id = :userId", Artikel.class)
+//                        .setParameter("userId", userId)
+//                        .getResultList();
+//    }
 
     @TransactionAttribute(REQUIRED)
     public Artikel addArtikel(Artikel artikel) {

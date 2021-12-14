@@ -18,11 +18,25 @@ public class ArtikelenResource {
     @Inject
     private ArtikelResource artikelResource;
 
-    @GET
+//    @GET
+//    @Produces(APPLICATION_JSON)
+//    public List<Artikel> getAlleArtikelen() {
+//        System.out.println("QUERY 1");
+//        return dao.getArtikelen();
+//    }
+
+    @GET // voor alle artikelen EN zoekfunctie
     @Produces(APPLICATION_JSON)
-    public List<Artikel> getArtikelen(@QueryParam("userId") Long userId) { // optionele parameter
-        return dao.getArtikelen(userId);
+    public List<Artikel> getArtikelen(@QueryParam("q") String query) { // optionele parameter
+        return dao.getArtikelen(query);
     }
+
+//    @GET // zoeken obv gebruiker
+//    @Produces(APPLICATION_JSON)
+//    public List<Artikel> getEigenArtikelen(@QueryParam("userId") Long userId) { // optionele parameter
+//        System.out.println("QUERY 3 = " + userId);
+//        return dao.getEigenArtikelen(userId);
+//    }
 
     @POST
     @Consumes(APPLICATION_JSON)
