@@ -1,6 +1,5 @@
 package nl.linhenjim.dao;
 
-import com.fasterxml.jackson.databind.util.ISO8601Utils;
 import nl.linhenjim.domain.Artikel;
 
 import javax.ejb.Stateless;
@@ -23,8 +22,10 @@ public class ArtikelDao {
         return Optional.ofNullable(em.find(Artikel.class, id));
     }
 
-    // haal alle artikelen OF obv zoekterm
-    public List<Artikel> getArtikelen(String query) {
+    public List<Artikel> getArtikelen(String query, Optional<Long> gebruikerId) {
+        if(gebruikerId.isPresent()) {
+            return getEigenArtikelen(gebruikerId.get());
+        }
         return query == null ?
                 em.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList() :
                 em.createQuery("SELECT a FROM Artikel a WHERE a.titel LIKE :query", Artikel.class)
@@ -32,14 +33,12 @@ public class ArtikelDao {
                         .getResultList();
     }
 
-//    // alle artikelen van 1 gebruiker --- NIET WEGGOOIEN
-//    public List<Artikel> getEigenArtikelen(Long userId) {
-//        return userId == null ?
-//                em.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList() :
-//                em.createQuery("SELECT a FROM Artikel a WHERE a.verkoper.id = :userId", Artikel.class)
-//                        .setParameter("userId", userId)
-//                        .getResultList();
-//    }
+    // alle artikelen van 1 gebruiker
+    public List<Artikel> getEigenArtikelen(Long userId) {
+        return em.createQuery("SELECT a FROM Artikel a WHERE a.verkoper.id = :userId", Artikel.class)
+                .setParameter("userId", userId)
+                .getResultList();
+    }
 
     @TransactionAttribute(REQUIRED)
     public Artikel addArtikel(Artikel artikel) {
