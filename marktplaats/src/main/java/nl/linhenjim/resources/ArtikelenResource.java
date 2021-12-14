@@ -6,6 +6,7 @@ import nl.linhenjim.domain.Artikel;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.List;
+import java.util.Optional;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -25,10 +26,11 @@ public class ArtikelenResource {
 //        return dao.getArtikelen();
 //    }
 
-    @GET // voor alle artikelen EN zoekfunctie
+    @GET // voor alle artikelen EN zoekfunctie EN 1 gebruiker
     @Produces(APPLICATION_JSON)
-    public List<Artikel> getArtikelen(@QueryParam("q") String query) { // optionele parameter
-        return dao.getArtikelen(query);
+    public List<Artikel> getArtikelen(@QueryParam("q") String query, @QueryParam("userId") Long gebruikerId) { // optionele parameter
+        Optional<Long> g = Optional.ofNullable(gebruikerId);
+        return dao.getArtikelen(query, g);
     }
 
 //    @GET // zoeken obv gebruiker
