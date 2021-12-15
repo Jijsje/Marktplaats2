@@ -1,16 +1,17 @@
 package nl.linhenjim.dao;
 
 import nl.linhenjim.domain.Gebruiker;
-import nl.linhenjim.util.PasswordUtils;
-import nl.linhenjim.util.Responses;
+import nl.linhenjim.util.*;
 
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import static javax.ejb.TransactionAttributeType.REQUIRED;
 
@@ -19,6 +20,14 @@ public class GebruikerDao {
     @PersistenceContext // Container managed EntityManager, not via @Inject
     private EntityManager em; // container, geef mij een EntityManager
 
+    @Inject
+    private Admin admin;
+
+    @Inject
+    private Email email;
+
+    @Inject
+    private Logger logger;
     public List<Gebruiker> getAll(String q) {
         return em.createNamedQuery("Gebruiker.findAll", Gebruiker.class).getResultList();
     }
@@ -29,7 +38,11 @@ public class GebruikerDao {
 
     @TransactionAttribute(REQUIRED)
     public Gebruiker add(Gebruiker gebruiker) {
+        String wachtwoord = admin.genereerWachtwoord();
+        System.out.println(wachtwoord);
+        gebruiker.setWachtwoord(wachtwoord);
         em.persist(gebruiker);
+        email.sendEmail(gebruiker.getEmailadres(), wachtwoord);
         return gebruiker;
     }
 

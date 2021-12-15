@@ -4,9 +4,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import nl.linhenjim.dao.GebruikerDao;
 import nl.linhenjim.domain.Gebruiker;
-import nl.linhenjim.filter.Authorized;
-import nl.linhenjim.util.Admin;
-import nl.linhenjim.util.PasswordUtils;
 import nl.linhenjim.util.SimpleKeyGenerator;
 
 import javax.inject.Inject;
@@ -39,14 +36,10 @@ public class GebruikersResource {
     private UriInfo uriInfo;
 
     @Inject
-    Admin admin;
-
-    @Inject
     private SimpleKeyGenerator keyGenerator;
 
     @Inject
     private Logger log;
-
 
     @GET
     @Produces(APPLICATION_JSON)
@@ -66,12 +59,11 @@ public class GebruikersResource {
     @Produces(APPLICATION_JSON)
     @Consumes(APPLICATION_JSON)
     public Gebruiker add(Gebruiker gebruiker) {
-        String wachtwoord  = admin.genereerWachtwoord();
-        System.out.println(wachtwoord);
-        gebruiker.setWachtwoord(wachtwoord);
         return gebruikerDao.add(gebruiker);
     }
-    @POST @Path("/login2")
+
+    @POST
+    @Path("/login2")
     public Response login2(Gebruiker u) {
         try {
             String login = u.getUsername();
