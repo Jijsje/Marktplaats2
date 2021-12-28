@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Email {
     private static String USER_NAME = "BD.Beheerder.Marktplaats";  // GMail user name, just the part before "@gmail.com"
-    private static String PASSWORD = "FroggyChair123!"; // GMail password
+    private static String PASSWORD = ""; // GMail password
     private static String SUBJECT = "Wachtwoord voor inloggen van Marktplaats";
 
     @Inject
@@ -73,7 +73,7 @@ public class Email {
             transport.connect(host, USER_NAME, PASSWORD);
             System.out.println("connected to the host");
             // Send the Message to the specified list of addresses
-            transport.sendMessage(message, message.getAllRecipients()); //Turn off to prevent sending the mail
+            //transport.sendMessage(message, message.getAllRecipients()); //Turn off to prevent sending the mail
             succesvolVerzonden = true;
             System.out.println("Verzenden is gelukt!");
 
